@@ -110,6 +110,10 @@ class PostsList extends Component {
     this.loadTodo()
   }
 
+  loadFunc = () => {
+    this.loadTodo()
+  }
+
   loadTodo = async () => {
     try{
       const todoString = await AsyncStorage.getItem(TODO)
@@ -151,7 +155,12 @@ class PostsList extends Component {
         </ScrollView>
         <View style={styles.footerOverlay}>
           <Button
-            onPress={() => this.props.navigation.navigate('Post',this.props.navigation.state.params.id,{ refresh : this.componentWillMount.bind(this)})}
+            // onPress={() => this.props.navigation.navigate('Post',this.props.navigation.state.params.id,{ refresh : this.componentWillMount.bind(this)})}
+            onPress={() => {this.props.navigation.navigate('Post',{
+              pointId: this.props.navigation.state.params.id,
+              refresh: this.loadFunc
+            })}
+          }
             title="POST"
             color= '#578EFD'
             style={styles.inputButton}
