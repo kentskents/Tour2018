@@ -28,50 +28,50 @@ class MyMaps extends Component {
   state = {
     scrolledX: 0,
     points:[],
-    points:[
-      {
-        id:0,
-        map_id:1,
-        name: "割烹　おかめ",
-        latitude: 39.641728,
-        longitude: 141.9486043,
-      },
-      {
-        id:1,
-        map_id:1,
-        name: "魚彩亭　すみよし",
-        latitude: 39.6408461,
-        longitude: 141.9441934,
-      },
-      {
-        id:2,
-        map_id:1,
-        name: "レストラン　汐菜",
-        latitude: 39.6390527,
-        longitude: 141.9677524,
-      },
-      {
-        id:3,
-        map_id:1,
-        name: "浄土ヶ浜レストハウス",
-        latitude: 39.6523041,
-        longitude: 141.9754433,
-      },
-      {
-        id:4,
-        map_id:1,
-        name: "味処　海舟",
-        latitude: 39.6421364,
-        longitude: 141.9558502,
-      },
-      {
-        id:5,
-        map_id:1,
-        name: "めし屋　頂。",
-        latitude: 39.6465428,
-        longitude: 141.9440859,
-      },
-    ],
+    // points:[
+    //   {
+    //     id:0,
+    //     map_id:1,
+    //     name: "割烹　おかめ",
+    //     latitude: 39.641728,
+    //     longitude: 141.9486043,
+    //   },
+    //   {
+    //     id:1,
+    //     map_id:1,
+    //     name: "魚彩亭　すみよし",
+    //     latitude: 39.6408461,
+    //     longitude: 141.9441934,
+    //   },
+    //   {
+    //     id:2,
+    //     map_id:1,
+    //     name: "レストラン　汐菜",
+    //     latitude: 39.6390527,
+    //     longitude: 141.9677524,
+    //   },
+    //   {
+    //     id:3,
+    //     map_id:1,
+    //     name: "浄土ヶ浜レストハウス",
+    //     latitude: 39.6523041,
+    //     longitude: 141.9754433,
+    //   },
+    //   {
+    //     id:4,
+    //     map_id:1,
+    //     name: "味処　海舟",
+    //     latitude: 39.6421364,
+    //     longitude: 141.9558502,
+    //   },
+    //   {
+    //     id:5,
+    //     map_id:1,
+    //     name: "めし屋　頂。",
+    //     latitude: 39.6465428,
+    //     longitude: 141.9440859,
+    //   },
+    // ],
     // posts:[
     //   {
     //     id:0,
@@ -121,13 +121,13 @@ class MyMaps extends Component {
   componentDidMount() {
     this.loadTodo()
 
-    //外部サーバから場所情報取ってくる
-    // fetch("http://192.168.1.86:7000/points.json")
-    //   .then(response => response.json())
-    //   .then(responseJson => this.setState({
-    //     points: responseJson,
-    //   }))
-    //   .catch(e => console.log(e));
+    // 外部サーバから場所情報取ってくる
+    fetch("https://peaceful-savannah-94553.herokuapp.com/points.json")
+      .then(response => response.json())
+      .then(responseJson => this.setState({
+        points: responseJson,
+      }))
+      .catch(e => console.log(e));
 
     // We should detect when scrolling has stopped then animate
     // We should just debounce the event listener here
