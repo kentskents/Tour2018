@@ -5,7 +5,7 @@
 
 
 import React, { Component } from 'react';
-import { AppRegistry } from 'react-native';
+import { AppRegistry, Image } from 'react-native';
 import { TabNavigator, DrawerNavigator } from 'react-navigation';
 import Feather from 'react-native-vector-icons/Feather';
 // import tabNav from './tabnav';
@@ -18,7 +18,8 @@ const drawernav = DrawerNavigator({
         screen: mapScreen,
         navigationOptions: {
             drawerLabel: "メニュー",
-            drawerIcon: ({ tintColor }) => <Feather name="arrow-left" size={24} />
+            // drawerIcon: ({ tintColor }) => <Feather name="arrow-left" size={24} />
+            drawerIcon: ({ tintColor }) => <Image source={require('./src/img/close.png')} />
         },
     }
 });

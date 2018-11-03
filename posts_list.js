@@ -74,20 +74,19 @@ const styles = StyleSheet.create({
   },
   inputButton:{
     // position: 'absolute',
-    // height: 96,
-    // width: 96,
+    // height: 120,
+    // width: 120,
     bottom:0,
     left:0,
   },
   footerOverlay: {
-    alignSelf: 'flex-end',
+    alignSelf: 'center',
     flex: 1,
     height: 60,
-    width: 60,
+    width: 80,
     position: "absolute",
     bottom: 0,
-    backgroundColor: "#0000FF",
-    opacity: 0.5,
+    // opacity: 0.5,
     justifyContent: "center",
   },
   map: {
@@ -153,8 +152,8 @@ class PostsList extends Component {
         <View style={styles.footerOverlay}>
           <Button
             onPress={() => this.props.navigation.navigate('Post',this.props.navigation.state.params.id,{ refresh : this.componentWillMount.bind(this)})}
-            title="Add"
-            color="#841584"
+            title="POST"
+            color= '#578EFD'
             style={styles.inputButton}
           />
         </View>

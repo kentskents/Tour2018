@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Image, StyleSheet } from 'react-native';
 import { TouchableOpacity } from 'react-native';
 import { StackNavigator} from 'react-navigation'
 import Feather from 'react-native-vector-icons/Feather';
@@ -19,10 +20,10 @@ const mapScreen = StackNavigator({
             headerTitleStyle:{ color: '#ffffff'},
             headerRight:(
               <TouchableOpacity onPress={() => navigation.navigate("DrawerOpen")}>
-                <Feather name="menu" size={30} />
+                <Image source={require('./src/img/humberger.png')} style={ styles.menu } />
               </TouchableOpacity>
             ),
-            headerStyle: { paddingRight: 10, paddingLeft: 10,backgroundColor: 'rgba(255, 191, 50, 1)'},
+            headerStyle: { paddingRight: 10, paddingLeft: 10,backgroundColor: '#FAFBFB'},
         })
     },
     /* 投稿の詳細画面 */
@@ -31,8 +32,8 @@ const mapScreen = StackNavigator({
         screen: DetailScreen,
         navigationOptions: (props) => ({
             title: "投稿データ",
-            headerTitleStyle:{ color: '#ffffff'},
-            headerStyle: { paddingRight: 10, paddingLeft: 10,backgroundColor: 'rgba(255, 191, 50, 1)'},
+            headerTitleStyle:{ color: '#6D6F6F'},
+            headerStyle: { paddingRight: 10, paddingLeft: 10,backgroundColor: '#D8F6FF'},
         })
     },
     /* 投稿一覧画面 */
@@ -41,8 +42,8 @@ const mapScreen = StackNavigator({
         screen: PostsList,
         navigationOptions: (navigation,props) => ({
             title: "リスト",
-            headerTitleStyle:{ color: '#ffffff'},
-            headerStyle: { paddingRight: 10, paddingLeft: 10,backgroundColor: 'rgba(255, 191, 50, 1)'},
+            headerTitleStyle:{ color: '#6D6F6F'},
+            headerStyle: { paddingRight: 10, paddingLeft: 10,backgroundColor: '#D8F6FF'},
         })
     },
     /* 投稿画面 */
@@ -51,10 +52,16 @@ const mapScreen = StackNavigator({
         screen: CloseCats,
         navigationOptions: (props) => ({
             title: "投稿",
-            headerTitleStyle:{ color: '#ffffff'},
-            headerStyle: { paddingRight: 10, paddingLeft: 10,backgroundColor: 'rgba(255, 191, 50, 1)'},
+            headerTitleStyle:{ color: '#6D6F6F'},
+            headerStyle: { paddingRight: 10, paddingLeft: 10,backgroundColor: '#D8F6FF'},
         })
     },
 })
+
+const styles = StyleSheet.create ({
+    menu: {
+        width: 20,
+    }
+});
 
 export default mapScreen;
