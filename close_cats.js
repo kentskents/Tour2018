@@ -151,7 +151,10 @@ class CloseCats extends Component {
       return
     }
     const id = this.state.currentIndex + 1
-    const point_id = this.props.navigation.state.params
+    // const point_id = this.props.navigation.state.params
+    // Alert.alert(JSON.stringify(this.props.navigation.state.params))
+    const point_id = this.props.navigation.state.params.pointId
+    // const point_id = 1
     const imageUri = this.state.imageUri
     const newPosts = {id: id,point_id:point_id,detail:detail,uri:imageUri}
     const posts = [...this.state.posts, newPosts]
@@ -161,7 +164,11 @@ class CloseCats extends Component {
       inputText: "",//文字入力を初期化
     })
     this.saveTodo(posts)
+   //  const itemId = this.props.navigation.getParam('itemId', 'NO-ID');
+   // const otherParam = this.props.navigation.getParam('otherParam', 'some default value');
+    // Alert.alert(JSON.stringify(this.props.navigation.state.params))
     this.props.navigation.state.params.refresh();
+    // this.props.navigation.state.params.refresh(this.loadTodo());
     this.props.navigation.goBack()
   }
 
